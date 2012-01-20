@@ -13,13 +13,131 @@
 
 @import compass
 
-//@import url('../thematic/library/styles/reset.css')
-@import url('../thematic/library/layouts/2c-r-fixed.css')
-@import url('../thematic/library/styles/images.css')
-@import url('../thematic/library/styles/plugins.css')
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic)
+//@import url(../thematic/library/styles/reset.css)
+//@import url(../thematic/library/layouts/2c-r-fixed.css)
+@import url(../thematic/library/styles/images.css)
+@import url(../thematic/library/styles/plugins.css)
+//@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,400bold)
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic)
 
 +global-reset
 
-body
-  font-family: 'PT Serif'
+$default-box-shadow-h-offset: 2px
+$default-box-shadow-v-offset: 2px
+$default-box-shadow-color: hsl(0,0,80)
+
+strong
+  font-weight: bold
+
+em
+  font-style: italic
+
+a
+  color: inherit
+  font-weight: bold
+  text-decoration: none
+
+#wrapper
+  +background-image(url('images/noise.png'), radial-gradient(top, hsl(80,50,100), hsl(0,0,96) 500px))
+  color: hsl(0,0,40)
+  font-family: 'Lora', serif
+  font-size: 16px
+  padding-top: 20px
+
+#header, #main, #footer
+  width: 700px
+  margin: 0 auto
+
+#blog-title
+  font-size: 28px
+  font-weight: bold
+  a
+    color: inherit
+    text-decoration: none
+
+#access
+  margin: 20px 0
+  .skip-link
+    display: none
+
+.indent-text
+  text-shadow: white 1px 1px 1px
+
+#nav-above, #branding
+  display: none
+
+#nav-above, #nav-below
+  @extend .indent-text
+  font-family: sans-serif
+  line-height: 30px
+  white-space: nowrap
+  .nav-previous
+    margin-right: 20px
+  .nav-previous, .nav-next
+    display: inline
+  a
+    font-weight: normal
+
+#content
+  position: relative
+
+#index-top
+  position: absolute
+  bottom: 0
+  right: 0
+  //text-align: right
+  //display: inline
+
+.widget_search
+  .widgettitle
+    display: none
+
+// #s is the search text field
+#s
+  +border-radius(4px)
+  box-shadow: white 0 1px 0, rgba(0, 0, 0, 0.2) 0 1px 2px 0px inset
+  padding: 5px
+  font-size: 14px
+  line-height: 16px
+  border: 1px solid hsl(0,0,70)
+  color: hsl(0,0,70)
+
+#searchsubmit
+  display: none
+
+.post
+  +border-radius(4px)
+  +single-box-shadow
+  background-color: white
+  clear: both
+  margin: 20px 0
+  overflow: hidden
+  padding: 20px 40px 0 40px
+
+.entry-title
+  font-size: 24px
+  font-weight: bold
+  margin-bottom: 5px
+
+.entry-utility
+  display: none
+
+.entry-meta
+  color: hsl(0,0,70)
+  font-size: 14px
+  margin-bottom: 1em
+  font-family: sans-serif
+  .meta-prep-author, .meta-prep-entry-date
+    display: none
+
+.entry-content
+  font-size: 18px
+  line-height: 1.6em
+  p
+    margin: 1em 0
+
+#footer
+  @extend .indent-text
+  padding: 20px
+  font-size: 16px
+  text-align: center
